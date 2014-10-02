@@ -83,8 +83,11 @@
 .editBox input, 
 .editBox select, 
 .editBox textarea {
-    width: 74.5%;
+    width: 74.5%;	
 }
+
+.topspace {
+	margin-top:50px;}
 
 </style></head>
 
@@ -254,7 +257,7 @@
 
 <p class="editme" data-edit="" data-id="editme-text">Edit me text</p>
 
-<p class="editme" data-edit="select" data-id="editme-text" data-option-arr="green, yellow, blue, pink" data-json-object="option" data-json-url="assets/myjson.json">Edit me select and text</p>
+<p class="editme topspace" data-edit="select" data-id="editme-text" data-option-arr="green, yellow, blue, pink" data-json-object="option" data-json-url="assets/myjson.json">Edit me select and text</p>
 
 
 		</div>
@@ -296,11 +299,17 @@
     <li><strong>data-addClass</strong>="classnames"</li>
     <li><strong>data-note</strong>="string"</li>
     <li><strong>data-placeholder</strong>="value"</li>
+ </ul> 
+ 
+   
+<strong>Data properties select</strong> (Optional) 
+<ul>  
+    <li><strong>data-option-arr</strong>="option1 otion2 option3"</li>
     <li><strong>data-json-url</strong>="path/myjson.json"</li>
-    <li><strong>data-json-obj</strong>="object name"</li>
+    <li><strong>data-json-obj</strong>="json object name"</li>
+ </ul>
 
 
-</ul>
 
 <h4>Similar Themes &amp; Templates:</h4>
 <div class="row">
@@ -317,11 +326,11 @@
 			<h4>Tags:</h4>
 			<ul class="list-inline list-tags">
 				
-				<li><a href="http://startbootstrap.com/template-categories/landing-pages" class="btn btn-xs btn-primary">landing-pages</a></li>
+				<li><a href="http://startbootstrap.com/template-categories/landing-pages" class="btn btn-xs btn-primary">Javascript</a></li>
 				
-				<li><a href="http://startbootstrap.com/template-categories/one-page" class="btn btn-xs btn-primary">one-page</a></li>
+				<li><a href="http://startbootstrap.com/template-categories/one-page" class="btn btn-xs btn-primary">Jquery</a></li>
 				
-				<li><a href="http://startbootstrap.com/template-categories/portfolios" class="btn btn-xs btn-primary">portfolios</a></li>
+				<li><a href="http://startbootstrap.com/template-categories/portfolios" class="btn btn-xs btn-primary">Json</a></li>
 				
 			</ul>
 			<p>Please visit our <a href="http://startbootstrap.com/bootstrap-resources">resources page</a> for design ideas and our <a href="http://startbootstrap.com/help">help page</a> if you need assistance with this theme.</p>
@@ -357,44 +366,8 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 footer-left">
-                <ul class="list-inline">
-                    <li>
-                        <a href="http://startbootstrap.com/">Home</a>
-                    </li>
-                    <li>
-                        <a href="http://startbootstrap.com/all-templates">Themes</a>
-                    </li>
-                    <li>
-                        <a href="http://startbootstrap.tumblr.com/">Blog</a>
-                    </li>
-                    <li>
-                        <a href="http://startbootstrap.com/bootstrap-resources">Resources</a>
-                    </li>
-                    <li>
-                        <a href="http://startbootstrap.com/help">Help</a>
-                    </li>
-                    <li>
-                        <a href="http://startbootstrap.com/contact">Contact</a>
-                    </li>
-                </ul>
-                <p>
-                    <iframe id="gh-fork" src="assets/github-btn.html" allowtransparency="true" scrolling="0" frameborder="0" height="20px" width="55px"></iframe>
-                    <iframe id="gh-star" src="assets/github-btn_002.html" allowtransparency="true" scrolling="0" frameborder="0" height="20px" width="110px"></iframe>
-                    <iframe style="width: 130px; height: 20px;" data-twttr-rendered="true" title="Twitter Follow Button" class="twitter-follow-button twitter-follow-button" src="assets/follow_button.html" allowtransparency="true" scrolling="no" id="twitter-widget-1" frameborder="0"></iframe>
-                    <iframe style="width: 107px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="assets/tweet_button.html" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe>
-                    <br>
-                    <div id="___follow_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 117px; height: 20px;"><iframe data-gapiattached="true" src="assets/follow.html" name="I0_1411835953269" id="I0_1411835953269" vspace="0" tabindex="0" style="position: static; top: 0px; width: 117px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
-                    <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="assets/fastbutton.html" name="I1_1411835953275" id="I1_1411835953275" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
-                    <br>
-                    <iframe src="assets/like.html" scrolling="no" style="border:none; overflow:hidden; width:150px; height:21px;" allowtransparency="true" frameborder="0"></iframe>
-                </p>
-            </div>
-            <div class="col-md-6 footer-right">
-                <p><a href="http://www.startbootstrap.com/">Start Bootstrap</a> is a project maintained by <a href="http://www.ironsummitmedia.com/">Iron Summit Media Strategies</a>.</p>
-                <p>Bootstrap CDN by <a href="http://tracking.maxcdn.com/c/99191/3982/378"><img src="assets/maxcdn-logo.png" alt="MaxCDN Logo"></a></p>
-                <p>Hosted on <a href="https://pages.github.com/"><img src="assets/gh-pages-logo.png" alt="GitHub Pages Logo"></a></p>
-            </div>
+            
+            
         </div>
         <hr>
         <div class="row">

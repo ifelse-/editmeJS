@@ -50,7 +50,9 @@ $(document).on('click', '.editme', function() {
 		
 			var jsonObjName = $(this).attr('data-json-object');
 			
-			var jsonPath = $(this).attr('data-json-url'); 	
+			var jsonPath = $(this).attr('data-json-url'); 
+			//Hide Json Path
+			$(this).attr('data-json-url', '**** hidden ****');
 			
 			var jsonObjName = $(this).attr('data-json-object');
 			var output2 = []; 
@@ -78,13 +80,11 @@ $(document).on('click', '.editme', function() {
             //Get select value END	
 			
 			var optionData;
-			/*
 			if(jsonObjName){
 				optionData = output2
 				} else {
 				optionData = output	
 					}
-			*/		
 			
 			(jsonObjName) ? optionData = output2 : optionData = output
 			
