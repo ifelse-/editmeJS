@@ -9,7 +9,7 @@ $(document).on('click', '.editme', function() {
 	//########### Vars
     var getText = $(this).text();
     var fieldId = $(this).attr('data-id');
-    var selectName = $(this).attr('data-select-name');
+    var selectName = $(this).attr('data-select-id');
     var textareaName = $(this).attr('data-textarea-id');
     var showValue = $(this).attr('data-show-value');
     var boxWidth = $(this).attr('data-box-width');
@@ -49,11 +49,8 @@ $(document).on('click', '.editme', function() {
     if ($(this).attr('data-edit') == "select") {
 		
 			var jsonObjName = $(this).attr('data-json-object');
-			
 			var jsonPath = $(this).attr('data-json-url'); 
 			//Hide Json Path
-			$(this).attr('data-json-url', '**** hidden ****');
-			
 			var jsonObjName = $(this).attr('data-json-object');
 			var output2 = []; 
 					
@@ -81,12 +78,12 @@ $(document).on('click', '.editme', function() {
 			
 			var optionData;
 			if(jsonObjName){
-				optionData = output2
+			optionData = output2;
 				} else {
-				optionData = output	
+			optionData = output;		
 					}
-			
-			(jsonObjName) ? optionData = output2 : optionData = output
+
+			//(jsonObjName) ? optionData = output2 : optionData = output
 			
             $(this).delay(50).queue(function (next) {
               $(this).append( "<div class='editBox'><input type='text' id='" +
@@ -109,7 +106,7 @@ $(document).on('click', '.editme', function() {
     if ($(this).attr('data-edit') == "select-only") {
             $(this).append("<div class='editBox'><select id='" +
                 selectName + "' name='" + selectName +
-                "'><option value='small 20 - 32'>Small 20 - 32</option><option value='medium 32 - 42'>Medium 32 - 42</option><option value='regular 44 - 56'>Regular 44 - 56</option><option value='large 44 - 58'>Large 44 - 58</option><option value='x-large'>X-large 58 - 63</option><option value='xx-large 63 - 70'>XX-large 63 - 70</option><option value='xxx-large 70 - 90'>XXX-large 70 - 90</option></select><button class='small button radius signup-btn search-people-btn' id='sub'>Save</button></div> "
+                "'></select><button class='small button radius' id='sub'>Save</button><button class='small button radius' id='editme-close'><strong>X</strong></button></div> "
             );
             //Get new selected value and reset		    
             var selectedLetter = $('#breast_size2').text();
