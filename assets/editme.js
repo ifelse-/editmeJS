@@ -95,27 +95,56 @@ $(document).on('click', '.editme', function() {
 });
 			
 			
-            //Get new selected value and reset		  
-            var selectedLetter = $('#breast_size2').text();
-            $("#breastLetter option[value='" + selectedLetter + "']").attr(
-                'selected', 'selected');
-            $(".cup").text(" cup");
         }
 		
 	///////////////// Select only		
     if ($(this).attr('data-edit') == "select-only") {
-            $(this).append("<div class='editBox'><select id='" +
-                selectName + "' name='" + selectName +
-                "'></select><button class='small button radius' id='sub'>Save</button><button class='small button radius' id='editme-close'><strong>X</strong></button></div> "
-            );
-            //Get new selected value and reset		    
-            var selectedLetter = $('#breast_size2').text();
-            var selectedHipSize = $('#hip_size').text();
-            $("#breastLetter option[value='" + selectedLetter + "']").attr(
-                'selected', 'selected');
-            $("#hip_size option[value='" + selectedHipSize + "']").attr(
-                'selected', 'selected');
-            $(".cup").text(" cup");
+		
+		   var jsonObjName = $(this).attr('data-json-object');
+			var jsonPath = $(this).attr('data-json-url'); 
+			//Hide Json Path
+			var jsonObjName = $(this).attr('data-json-object');
+			var output2 = []; 
+					
+			//If object name set on DOM run getJSON output2		
+			if(jsonObjName){		
+			 $.getJSON(jsonPath,function(data){
+				$.each(data[jsonObjName], function( i, item ) {
+					//alert(data.option[i].value);	
+					output2.push('<option value="' + data.option[i].value + '">' +
+                    data.option[i].text + '</option>');						 
+					});
+			 });     
+			 }
+
+            //Get select value
+            var selectData = $(this).attr('data-option-arr');
+            var selectDataArr = selectData.split(',');
+            var output = [];
+			
+            $.each(selectDataArr, function(key, value) {
+                output.push('<option value="' + key + '">' +
+                    value + '</option>');
+            });
+            //Get select value END	
+			
+			var optionData;
+			if(jsonObjName){
+			optionData = output2;
+				} else {
+			optionData = output;		
+					}
+
+
+ $(this).delay(50).queue(function (next) {
+              $(this).append( "<div class='editBox'><select id='" + selectName + "' name='" +
+                selectName + "'>" + optionData.join('') +
+                "</select><button class='small button radius signup-btn search-people-btn' id='sub'>Save</button><button class='small button radius' id='editme-close'><strong>X</strong></button></div> ");
+    next();
+});
+		
+           
+          
         }
 		
 	///////////////// Textarea and Input text			
@@ -125,7 +154,7 @@ $(document).on('click', '.editme', function() {
                 fieldId + "' name='" + fieldId + "' value=" +
                 getText + "><textarea id='" + textareaName +
                 "' name='" + textareaName + "'>" + getText +
-                "</textarea><button class='small button radius signup-btn search-people-btn' id='sub'>Save</button></div>"
+                "</textarea><button class='small button radius signup-btn search-people-btn' id='sub'>Save</button><button class='small button radius' id='editme-close'><strong>X</strong></button></div>"
             );
         }
 		
@@ -134,7 +163,7 @@ $(document).on('click', '.editme', function() {
             $(this).append("<div class='editBox'><textarea id='" +
                 textareaName + "' name='" + textareaName + "'>" +
                 getText +
-                "</textarea><button class='small button radius signup-btn search-people-btn' id='sub'>Save</button></div>"
+                "</textarea><button class='small button radius signup-btn search-people-btn' id='sub'>Save</button><button class='small button radius' id='editme-close'><strong>X</strong></button></div>"
             );
         }
     }
